@@ -22,7 +22,11 @@ function HomeStackScreen() {
         component={HomeScreen}
         options={{headerShown: false}}
       />
-      <HomeStack.Screen name="TaskDetails" component={Taskdetails} />
+      <HomeStack.Screen
+        name="TaskDetails"
+        component={Taskdetails}
+        options={{headerShown: false}}
+      />
     </HomeStack.Navigator>
   );
 }
