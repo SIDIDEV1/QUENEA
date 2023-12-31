@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* appTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* appTestTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-appTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-appTest.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-appTest-appTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-appTest-appTestTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		DA9F10C676595FA8BA17B47E /* libPods-appTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-appTest.a */; };
 		F40F814C2B41029C009A945C /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F81392B41029C009A945C /* Fontisto.ttf */; };
 		F40F814D2B41029C009A945C /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F813A2B41029C009A945C /* Octicons.ttf */; };
 		F40F814E2B41029C009A945C /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F40F813B2B41029C009A945C /* Feather.ttf */; };
@@ -97,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-appTest.a in Frameworks */,
+				DA9F10C676595FA8BA17B47E /* libPods-appTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import Colors from '../screens/constants/Colors';
+import Colors from '../constants/Colors';
 
 const DashedLine = ({dashWidth = 10, dashGap = 5, totalLength = 300}) => {
   const dashNum = Math.floor(totalLength / (dashWidth + dashGap));
@@ -19,7 +19,7 @@ const DashedLine = ({dashWidth = 10, dashGap = 5, totalLength = 300}) => {
 const styles = StyleSheet.create({
   line: {
     flexDirection: 'row',
-    overflow : 'hidden'
+    overflow: 'hidden',
   },
   dash: {
     height: 1.5,

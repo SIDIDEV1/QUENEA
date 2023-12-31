@@ -1,24 +1,28 @@
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import Colors from '../constants/Colors';
+import Colors from '../../constants/Colors';
 import DashedLine from '../../components/DashedLine';
+import Icon from 'react-native-vector-icons/Feather';
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const inset = useSafeAreaInsets();
+  const handleTaskDetails = () => {
+    navigation.navigate('TaskDetails')
+  }
 
   return (
     <View style={{ ...styles.container, paddingTop: inset.top }}>
       <View style={styles.header}>
         <Text style={styles.headerText}>QUENEA</Text>
         <Pressable style={styles.notificationButton}>
-          <Text>M</Text>
+          <Icon name="mail" size={20} />
         </Pressable>
       </View>
       <ScrollView>
         <View style={styles.listContent}>
           {[...Array(10)].map((_, i) => (
-            <View style={styles.item}>
+            <TouchableOpacity style={styles.item} onPress={handleTaskDetails}>
               <View style={styles.itemTop}>
                 <Text style={styles.itemName}>Affaire > Site {i + 1}</Text>
                 <View style={styles.itemStatus}>
@@ -35,7 +39,7 @@ const HomeScreen = () => {
               </View>
               <View style={styles.cercle}>
               </View>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
@@ -68,6 +72,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
+    borderColor: Colors.gray
   },
   item: {
     backgroundColor: Colors.primary,

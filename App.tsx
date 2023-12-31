@@ -6,6 +6,9 @@ import HomeScreen from './src/screens/home/HomeScreen';
 import SearchSreen from './src/screens/search/SearchSreen';
 import SettingScreen from './src/screens/profil/SettingScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Colors from './src/constants/Colors';
+import Taskdetails from './src/screens/Task/Taskdetails';
 
 const HomeStack = createNativeStackNavigator();
 const SearchStack = createNativeStackNavigator();
@@ -19,6 +22,7 @@ function HomeStackScreen() {
         component={HomeScreen}
         options={{headerShown: false}}
       />
+      <HomeStack.Screen name="TaskDetails" component={Taskdetails} />
     </HomeStack.Navigator>
   );
 }
@@ -43,10 +47,40 @@ function TabNavigator() {
   const Tab = createBottomTabNavigator();
 
   return (
-    <Tab.Navigator screenOptions={{headerShown: false}}>
-      <Tab.Screen name="HomeStack" component={HomeStackScreen} />
-      <Tab.Screen name="SearchStack" component={SearchStackScreen} />
-      <Tab.Screen name="SettingsStack" component={SettingsStackScreen} />
+    <Tab.Navigator
+      screenOptions={({route}) => ({
+        tabBarIcon: ({focused, color, size}) => {
+          let iconName;
+
+          if (route.name === 'HomeStack') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'SearchStack') {
+            iconName = focused ? 'search' : 'search-outline';
+          } else if (route.name === 'SettingsStack') {
+            iconName = focused ? 'settings' : 'settings-outline';
+          }
+
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: Colors.blue,
+        tabBarInactiveTintColor: 'gray',
+        headerShown: false,
+      })}>
+      <Tab.Screen
+        name="HomeStack"
+        component={HomeStackScreen}
+        options={{tabBarLabel: 'Accueil'}}
+      />
+      <Tab.Screen
+        name="SearchStack"
+        component={SearchStackScreen}
+        options={{tabBarLabel: 'Rechercher'}}
+      />
+      <Tab.Screen
+        name="SettingsStack"
+        component={SettingsStackScreen}
+        options={{tabBarLabel: 'Profil'}}
+      />
     </Tab.Navigator>
   );
 }
@@ -58,7 +92,5 @@ function App(): JSX.Element {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({});
 
 export default App;
