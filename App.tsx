@@ -10,6 +10,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from './src/constants/Colors';
 import Taskdetails from './src/screens/Task/Taskdetails';
 import Checklists from './src/screens/Task/Checklists';
+import Quiz from './src/screens/quiz/Quiz';
 
 const HomeStack = createNativeStackNavigator();
 const SearchStack = createNativeStackNavigator();
@@ -31,6 +32,11 @@ function HomeStackScreen() {
       <HomeStack.Screen
         name="Checklists"
         component={Checklists}
+        options={{headerShown: false}}
+      />
+      <HomeStack.Screen
+        name="Quiz"
+        component={Quiz}
         options={{headerShown: false}}
       />
     </HomeStack.Navigator>

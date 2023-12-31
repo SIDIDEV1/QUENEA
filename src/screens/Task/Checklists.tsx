@@ -18,6 +18,10 @@ const Checklists = ({navigation}) => {
     navigation.goBack();
   };
 
+  const handleItemNext = () => {
+    navigation.navigate('Quiz');
+  };
+
   return (
     <View style={{paddingTop: inset.top, ...styles.container}}>
       <View style={styles.content}>
@@ -32,7 +36,10 @@ const Checklists = ({navigation}) => {
           <View style={styles.section}>
             <Text style={styles.text}>Listes de contrôle</Text>
             {[...Array(10)].map((_, i) => (
-              <TouchableOpacity key={i + 1} style={styles.listItem}>
+              <TouchableOpacity
+                key={i + 1}
+                style={styles.listItem}
+                onPress={handleItemNext}>
                 <Text style={styles.text}>Avant intervention</Text>
                 <View style={styles.listItemRight}>
                   <Text style={styles.text}>22%</Text>
