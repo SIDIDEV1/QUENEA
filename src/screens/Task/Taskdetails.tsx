@@ -20,6 +20,10 @@ const Taskdetails = ({navigation}) => {
     navigation.goBack();
   };
 
+  const handleDoTask = () => {
+    navigation.navigate('Checklists');
+  };
+
   return (
     <View style={{paddingTop: inset.top, ...styles.container}}>
       <View style={styles.content}>
@@ -57,7 +61,7 @@ const Taskdetails = ({navigation}) => {
               <Image style={styles.maps} source={mapsImage} />
             </View>
             <View>
-              <TouchableOpacity style={styles.button}>
+              <TouchableOpacity style={styles.button} onPress={handleDoTask}>
                 <Text style={styles.buttonText}>Effectuer cette tâche</Text>
               </TouchableOpacity>
             </View>
@@ -82,6 +86,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 15,
+    paddingHorizontal: 12,
   },
   headerTitle: {
     fontSize: 23,

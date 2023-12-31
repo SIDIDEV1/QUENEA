@@ -9,6 +9,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Colors from './src/constants/Colors';
 import Taskdetails from './src/screens/Task/Taskdetails';
+import Checklists from './src/screens/Task/Checklists';
 
 const HomeStack = createNativeStackNavigator();
 const SearchStack = createNativeStackNavigator();
@@ -25,6 +26,11 @@ function HomeStackScreen() {
       <HomeStack.Screen
         name="TaskDetails"
         component={Taskdetails}
+        options={{headerShown: false}}
+      />
+      <HomeStack.Screen
+        name="Checklists"
+        component={Checklists}
         options={{headerShown: false}}
       />
     </HomeStack.Navigator>

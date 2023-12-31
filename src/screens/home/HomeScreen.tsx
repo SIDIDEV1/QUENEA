@@ -22,7 +22,7 @@ const HomeScreen = ({navigation}) => {
       <ScrollView>
         <View style={styles.listContent}>
           {[...Array(10)].map((_, i) => (
-            <TouchableOpacity style={styles.item} onPress={handleTaskDetails}>
+            <TouchableOpacity key={i+1} style={styles.item} onPress={handleTaskDetails}>
               <View style={styles.itemTop}>
                 <Text style={styles.itemName}>Affaire > Site {i + 1}</Text>
                 <View style={styles.itemStatus}>
